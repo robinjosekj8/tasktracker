@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>SyncFlow</h2>
+                <p>Maintenance Hub</p>
+            </div>
+            <div class="page-menu">
+                <a href="index.html" class="active">Task Board</a>
+                <a href="efficiency.html">Work Efficiency</a>
+            </div>
+            
+            <div class="status-filters">
+                <h3>WORKERS</h3>
+                <nav class="nav-menu" id="worker-nav">
+                    <a href="#" class="active" data-filter="all">All Tasks</a>
+                </nav>
+            </div>
+            <div class="status-filters">
+                <h3>STATUS</h3>
+                <div class="filters-container" id="status-filters">
+                    <!-- Checkboxes injected by js -->
+                </div>
+            </div>
+        </aside>
+        
+        <main class="main-content">
+            <header class="topbar">
+                <h1>Dashboard Overview</h1>
+                <div class="stats">
+                    <div class="stat-card">
+                        <span class="stat-value" id="total-tasks">-</span>
+                        <span class="stat-label">Total Tasks</span>
+                    </div>
+                     <div class="stat-card">
+                        <span class="stat-value" id="done-tasks">-</span>
+                        <span class="stat-label">Completed</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="controls">
+                <input type="text" id="search-input" placeholder="Search tasks, sites, or IDs...">
+            </div>
+            
+            <div class="task-grid" id="task-container">
+                <div class="loading">Loading tasks...</div>
+            </div>
+        </main>
+    </div>
+    <!-- Task Detail Modal -->
+    <div id="task-modal" class="modal">
+        <div class="modal-content glass">
+            <div class="modal-header">
+                <h2 id="modal-title">Task Details</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3>Description</h3>
+                    <div id="modal-description" class="description-box"></div>
+                </div>
+                <div class="modal-section">
+                    <h3>Work Logs & Chatter</h3>
+                    <div id="modal-logs" class="logs-container">
+                        <div class="loading-logs">Loading live Odoo messages...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

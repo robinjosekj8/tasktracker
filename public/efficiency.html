@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Efficiency</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>SyncFlow</h2>
+                <p>Maintenance Hub</p>
+            </div>
+            <nav class="page-menu">
+                <a href="index.html">Task Board</a>
+                <a href="efficiency.html" class="active">Work Efficiency</a>
+            </nav>
+        </aside>
+        
+        <main class="main-content">
+            <header class="topbar">
+                <h1>Work Efficiency</h1>
+                <div class="stats">
+                    <div class="stat-card">
+                        <span class="stat-value" id="global-eff">-</span>
+                        <span class="stat-label">Global Efficiency</span>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Dashboard Insights Panel -->
+            <div id="insights-panel" style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 1.2rem; padding: 1.5rem; backdrop-filter: blur(10px); margin-bottom: 2rem;">
+                <h3 style="color: #6366f1; margin-bottom: 1rem; font-size: 1.2rem; display:flex; align-items:center; gap:0.5rem;">
+                    <span>⚡</span> Work Analytics & Insights
+                </h3>
+                <div id="insights-content" style="display: flex; flex-direction: column; gap: 1rem; color: var(--text-secondary); font-size: 0.95rem;">
+                    <!-- JS will inject insights -->
+                </div>
+            </div>
+            
+            <h3 style="color: #e2e8f0; margin-bottom: 1rem; font-size: 1.2rem;">Individual Performance</h3>
+            <div class="task-grid" id="workers-container">
+                <div class="loading">Calculating efficiencies...</div>
+            </div>
+        </main>
+    </div>
+    <script src="efficiency.js"></script>
+</body>
+</html>
